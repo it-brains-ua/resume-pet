@@ -19,9 +19,9 @@ router.get('/', function (req, res) {
 // ================================================================
 
 //              ↙ тут вводимо шлях (PATH) до сторінки
-router.get('/albert', function (req, res) {
+router.get('/bio', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
-  res.render('albert', {
+  res.render('bio', {
     name: 'Albert Einstein',
     birthdate: 'March 14, 1879',
     birthplace:
