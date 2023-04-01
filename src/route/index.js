@@ -221,7 +221,7 @@ router.get("/works", function (req, res) {
 							name: 'Resume',
 							url: 'http://resume.com.ua/',
 							about: "Новітні технології",
-							stack: [
+							stacks: [
 								{
 									name: "React.js",
 								},
