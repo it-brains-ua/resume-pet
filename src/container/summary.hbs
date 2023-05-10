@@ -5,16 +5,25 @@
 {{#with person}}
 <div>
     <header>
-        {{> title}}
+        <div>
+            <h1>{{name.firstname}} {{name.lastname}} | Resume</h1>
+        </div>
+
+        <div>
+            <b>{{position}}</b>
+        </div>
+        <br>
+        <div>
+            <em>{{sallary}}</em>
+        </div>
+
         <br>
         <hr> 
     </header>
 
     <main>
         <section>
-            <div>
-                <h2>{{summary.title}}</h2>
-            </div>
+            {{> title data=summary.title}}
             <div>
                 <p>
                     {{summary.text}}
@@ -23,9 +32,7 @@
         </section>
 
         <section>
-            <div>
-                <h2>{{otherexp.title}}</h2>
-            </div>
+            {{> title data=otherexp.title}}
             <div>
                 <p>
                     {{otherexp.text}}
