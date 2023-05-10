@@ -6,9 +6,11 @@
 <html>
 
   <head>
-    <title>
-      Page name
-    </title>
+    {{#if title}}
+      <title>{{title}}</title>
+    {{else}}
+      <title>Untitled page</title>
+    {{/if}}
     <meta charset='utf-8' />
     <link href='css/index.css' rel='stylesheet' />
   </head>
