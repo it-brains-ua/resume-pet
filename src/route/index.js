@@ -54,6 +54,22 @@ router.get('/summary', function (req, res) {
   })
 })
 
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/skills', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('skills', {
+    title: 'Skills',
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+router.get('/education', function (req, res) {
+  res.render('education', {
+    title: 'Education',
+  })
+})
 // ================================================================
 
 // Підключаємо роутер до бек-енду
