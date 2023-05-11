@@ -6,8 +6,8 @@
 <html>
 
   <head>
-    {{#if title}}
-      <title>{{title}}</title>
+    {{#if page.title}}
+      <title>{{page.title}}</title>
     {{else}}
       <title>Untitled page</title>
     {{/if}}
@@ -16,8 +16,56 @@
   </head>
 
   <body>
+	{{#with header}}
+    <header>
+        <div>
+            <h1>{{name.firstname}} {{name.lastname}} | Resume</h1>
+        </div>
+        <div>
+            <b>{{position}}</b>
+        </div>
+        <br>
+        <div>
+            <em>{{sallary}}</em>
+        </div>
+		<br>
+		<div>
+			<address>{{address}}</address>
+		</div>
+        <br>
+        <hr> 
+    </header>
+	{{/with}}
+    <nav>
+		{{> link text="Skills" href="/skills" line=false}}
+		{{> link text="Summary" href="/summary"}}
+        {{> link text="Education" href="/education"}}
+    </nav>
     {{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   --}}
+
     {{{body}}}
+
+	{{#with footer}}
+	<footer>
+        <hr>
+        <br>
+		<div>
+			{{#with social}}
+				{{> link email}}
+				{{> link phone}}
+				{{> link linkedin blank=true}}
+			{{/with}}
+		</div>
+		<br>
+		<div>
+			<em>Copyright (c){{../header/name/firstname}} {{../header/name/lastname}}</em>
+		</div>
+		<br>
+		<div>
+			<address>{{../header/address}}</address>
+		</div>
+    </footer>
+	{{/with}}
   </body>
 
 </html>
