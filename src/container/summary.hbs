@@ -2,7 +2,8 @@
 	{{#with main}}
     <main>
         <section>
-            {{> title data=summary.title}}
+            {{!-- {{> title data=summary.title}} --}}
+            {{> title name=summary.title big=true}}
             <div>
                 <p>
                     {{summary.text}}
@@ -11,7 +12,7 @@
         </section>
 
         <section>
-            {{> title data=otherexp.title}}
+            {{> title name=otherexp.title}}
             <div>
                 <p>
                     {{otherexp.text}}
