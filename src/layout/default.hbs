@@ -36,36 +36,13 @@
         <hr> 
     </header>
 	{{/with}}
-    <nav>
-		{{> link text="Skills" href="/skills" line=false}}
-		{{> link text="Summary" href="/summary"}}
-        {{> link text="Education" href="/education"}}
-    </nav>
-    {{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   --}}
+
+    {{> nav}}
 
     {{{body}}}
 
-	{{#with footer}}
-	<footer>
-        <hr>
-        <br>
-		<div>
-			{{#with social}}
-				{{> link email}}
-				{{> link phone}}
-				{{> link linkedin blank=true}}
-			{{/with}}
-		</div>
-		<br>
-		<div>
-			<em>Copyright (c){{../header/name/firstname}} {{../header/name/lastname}}</em>
-		</div>
-		<br>
-		<div>
-			<address>{{../header/address}}</address>
-		</div>
-    </footer>
-	{{/with}}
+    {{> footer}}
+	
   </body>
 
 </html>

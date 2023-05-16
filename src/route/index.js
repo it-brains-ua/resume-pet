@@ -190,5 +190,74 @@ router.get('/education', function (req, res) {
 })
 // ================================================================
 
+router.get('/work', function (req, res) {
+  res.render('work', {
+    layout: 'bigpage',
+
+    page: {
+      title: { name: 'Work', big: true },
+    },
+
+    header,
+
+    main: {
+      works: [
+        {
+          position: 'Junior Fullstack Developer',
+          company: {
+            name: 'IT Brains',
+            url: 'https://it-brains.com.ua',
+          },
+          duration: {
+            from: '10.10.2022',
+            to: '22.03.2023',
+          },
+          projectAmount: 3,
+          projects: [
+            {
+              name: 'Resume',
+              url: 'http://localhost:3000/work',
+              about: 'Some information about project',
+              stackAmount: 3,
+              stacks: [
+                {
+                  name: 'React.js',
+                },
+                {
+                  name: 'HTML / CSS',
+                },
+                {
+                  name: 'Node.js',
+                },
+              ],
+              awardAmount: 2,
+              awards: [
+                {
+                  name: 'My award 1',
+                },
+                {
+                  name: 'My award 2',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          position: 'Installer',
+          company: {
+            name: 'Lanet',
+          },
+          duration: {
+            from: '16.02.2020',
+          },
+          projectAmount: 0,
+        },
+      ],
+    },
+
+    footer,
+  })
+})
+
 // Підключаємо роутер до бек-енду
 module.exports = router
