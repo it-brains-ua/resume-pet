@@ -1,15 +1,19 @@
-{{!-- 
-Це код container файлу для summary сторінки, 
+{{!--
+Це код container файлу для summary сторінки,
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
 <div>
     <header>
         <div>
-            <h1>Dmytro Ivanov | Resume</h1>
+            <h1>{{name.firstname}} {{name.lastname}}</h1>
         </div>
         <div>
-            <b>Junior Fullstack JS Developer</b>
+            <b>{{position}}</b>
+        </div>
+        <br>
+        <div>
+            <em>{{salary}}</em>
         </div>
         <br>
         <hr>
@@ -18,42 +22,99 @@
     <main>
         <section>
             <div>
-                <h2>Summary</h2>
+                <h2>{{summary.title}}</h2>
             </div>
             <div>
                 <p>
-                    Open-minded for new technologies, with 1 years of experience in development. Whenever I start to
-                    work on a new project I learn the domain and try to understand the idea of the project. Good team
-                    player, every colleague is a friend to me.
+                    {{summary.text}}
                 </p>
             </div>
         </section>
 
         <section>
-            <div>
-                <h2>Other experience</h2>
-            </div>
-            <div>
-                <p>
-                    Pet project for parsing sport betting data from different platforms ( odds ) and sport statistics (
-                    tournament position, goals etc), analyzing by simple mathematics models and preparing probability
-                    for such events like: money line - first win / draw / second win, totals etc.
-                </p>
-            </div>
+            {{#with experience}}
+                {{> title data=title}}
+                <div>
+                    <p>
+                        {{text}}
+                    </p>
+                </div>
+            {{/with}}
         </section>
     </main>
 
     <footer>
         <hr>
         <br>
-        <a href="mailto:dmytro@mail.com">dmytro@mail.com</a> /
-        <a href="tel:+380670000123">+380670000123</a> /
-        <a href="https://www.linkedin.com/in/dmytro-test" target="_blank">LinkedIn</a>
+{{!-- Перший варіант:         --}}
+        {{!-- <a href="{{social.email.href}}">{{social.email.text}}</a> /
+        <a href="{{social.phone.href}}">{{social.phone.text}}</a> /
+        <a href="{{social.linked.href}}" target="_blank">{{social.linked.text}}</a> --}}
+
+{{!-- Другий варіант: --}}
+        {{!-- {{#with social}}
+
+            {{#with email}}
+                <a href="{{href}}">{{text}}</a> /
+            {{/with}}
+
+            {{#with phone}}
+                <a href="{{href}}">{{text}}</a> /
+            {{/with}}
+
+            {{#with linked}}
+                <a href="{{href}}" target="_blank">{{text}}</a>
+            {{/with}} 
+        {{/with}}    --}}
+
+{{!-- Третій A варіант: --}}     
+        {{!-- {{#with social}}
+
+            {{#with email}}
+                {{> link links=href info=text}} /
+            {{/with}}
+
+            {{#with phone}}
+                {{> link links=href info=text}} /
+            {{/with}}
+
+            {{#with linked}}
+                {{> link links=href info=text}}
+            {{/with}}
+
+        {{/with}} --}}
+
+
+{{!-- Третій Б варіант: --}}
+        {{!-- {{#with social}}
+
+             ==Третій В варіант:                 {{> link links=email.href info=email.text}} /
+            {{#with email}}
+                {{> link}} /
+            {{/with}}
+
+            {{#with phone}}
+                {{> link}} /
+            {{/with}}
+
+            {{#with linked}}
+                {{> link}}
+            {{/with}}
+
+        {{/with}}        --}}
+
+{{!-- Четвертий варіант: --}}
+        {{#with social}}
+            {{> link data=email}} /
+            {{> link data=phone}} /
+            {{> link data=linked}}
+        {{/with}} 
+
     </footer>
 
 </div>
 
-{{!-- 
-    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
-    Адже наш layout/default.hbs має вже структуру HTML
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
 --}}
