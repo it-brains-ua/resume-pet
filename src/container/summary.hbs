@@ -4,7 +4,7 @@
 --}}
 
 <div>
-    <header>
+    {{!-- <header>
         <div>
             <h1>{{name.firstname}} {{name.lastname}}</h1>
         </div>
@@ -17,33 +17,38 @@
         </div>
         <br>
         <hr>
-    </header>
+    </header> --}}
 
-    <main>
-        <section>
-            <div>
-                <h2>{{summary.title}}</h2>
-            </div>
-            <div>
-                <p>
-                    {{summary.text}}
-                </p>
-            </div>
-        </section>
+    {{!-- <nav>
+        <a href="/skills">Skills</a>
+        <a href="/summary">Summary</a>
+    </nav> --}}
 
-        <section>
-            {{#with experience}}
-                {{> title data=title}}
+    {{#with main}}
+        <main>
+            <section>
+                {{> title data=summary.title}}
                 <div>
                     <p>
-                        {{text}}
+                        {{summary.text}}
                     </p>
                 </div>
-            {{/with}}
-        </section>
-    </main>
+            </section>
 
-    <footer>
+            <section>
+                {{#with experience}}
+                    {{> title data=title}}
+                    <div>
+                        <p>
+                            {{text}}
+                        </p>
+                    </div>
+                {{/with}}
+            </section>
+        </main>
+    {{/with}}
+
+    {{!-- <footer>
         <hr>
         <br>
 {{!-- Перший варіант:         --}}
@@ -104,13 +109,13 @@
         {{/with}}        --}}
 
 {{!-- Четвертий варіант: --}}
-        {{#with social}}
+        {{!-- {{#with social}}
             {{> link data=email}} /
             {{> link data=phone}} /
             {{> link data=linked}}
         {{/with}} 
 
-    </footer>
+    </footer> --}}
 
 </div>
 
