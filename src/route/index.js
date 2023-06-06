@@ -5,6 +5,37 @@ const router = express.Router()
 
 // ================================================================
 
+var header = {
+  name: {
+    firstname: 'Ivan',
+    lastname: 'Ivanov',
+  },
+  position: 'Junior Fullstack JS Developer',
+
+  salary: '$600 в місяць',
+
+  address: 'Моя адреса - моя країна, яка зветься Україна!',
+}
+
+var footer = {
+  social: {
+    email: {
+      text: 'ivan@mail.com',
+      href: 'mailto:ivan@mail.com',
+    },
+    phone: {
+      text: '+380670000123',
+      href: 'tel:+380670000123',
+    },
+    linked: {
+      text: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/dmytro-test',
+    },
+  },
+}
+
+// ================================================================
+
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
@@ -12,7 +43,11 @@ router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index', {
+    page: {
+      title: 'Welcome to resume lesson',
+    },
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
@@ -25,21 +60,10 @@ router.get('/summary', function (req, res) {
     // ↙ сюди вводимо JSON дані
 
     page: {
-      title: 'Resume',
+      title: 'Resume | Summary',
     },
 
-    header: {
-      name: {
-        firstname: 'Ivan',
-        lastname: 'Ivanov',
-      },
-      position: 'Junior Fullstack JS Developer',
-
-      salary: '$600 в місяць',
-
-      address:
-        'Моя адреса - моя країна, яка зветься Україна!',
-    },
+    header,
 
     main: {
       summary: {
@@ -53,22 +77,7 @@ router.get('/summary', function (req, res) {
       },
     },
 
-    footer: {
-      social: {
-        email: {
-          text: 'ivan@mail.com',
-          href: 'mailto:ivan@mail.com',
-        },
-        phone: {
-          text: '+380670000123',
-          href: 'tel:+380670000123',
-        },
-        linked: {
-          text: 'LinkedIn',
-          href: 'https://www.linkedin.com/in/dmytro-test',
-        },
-      },
-    },
+    footer,
   })
 })
 
@@ -81,49 +90,75 @@ router.get('/skills', function (req, res) {
     // ↙ сюди вводимо JSON дані
 
     page: {
-      title: 'Resume',
+      title: 'Resume | Skills',
     },
 
-    header: {
-      name: {
-        firstname: 'Ivan',
-        lastname: 'Ivanov',
-      },
-      position: 'Junior Fullstack JS Developer',
-
-      salary: '$600 в місяць',
-
-      address:
-        'Моя адреса - моя країна, яка зветься Україна!',
-    },
+    header,
 
     main: {
       skills: [
-        'HTML',
-        'Handlebar',
-        'VS Code',
-        'Git',
-        'Terminal',
-        'NPM',
+        {
+          name: 'HTML',
+          point: 7,
+          isTop: true,
+        },
+        {
+          name: 'Handlebar',
+          point: 3,
+          isTop: true,
+        },
+        {
+          name: 'VS Code',
+          point: 4,
+          isTop: false,
+        },
+        {
+          name: 'Git',
+          point: 4,
+        },
+        {
+          name: 'Terminal',
+          point: 9,
+        },
+        {
+          name: 'NPM',
+          point: 3,
+        },
+        {
+          name: 'React.js',
+          point: 0,
+        },
+        {
+          name: 'PHP',
+          point: null,
+        },
+      ],
+
+      hobbies: [
+        {
+          name: 'Computer repair',
+          isMain: true,
+        },
+        {
+          name: 'Sci-Fi',
+          isMain: true,
+        },
+        {
+          name: 'Cycling',
+          isMain: true,
+        },
+        {
+          name: 'Hi-Tech',
+          isMain: true,
+        },
+        {
+          name: 'Cars',
+          isMain: false,
+        },
       ],
     },
 
-    footer: {
-      social: {
-        email: {
-          text: 'ivan@mail.com',
-          href: 'mailto:ivan@mail.com',
-        },
-        phone: {
-          text: '+380670000123',
-          href: 'tel:+380670000123',
-        },
-        linked: {
-          text: 'LinkedIn',
-          href: 'https://www.linkedin.com/in/dmytro-test',
-        },
-      },
-    },
+    footer,
   })
 })
 
@@ -136,47 +171,48 @@ router.get('/education', function (req, res) {
     // ↙ сюди вводимо JSON дані
 
     page: {
-      title: 'Resume',
+      title: 'Resume | Education',
     },
 
-    header: {
-      name: {
-        firstname: 'Ivan',
-        lastname: 'Ivanov',
-      },
-      position: 'Junior Fullstack JS Developer',
-
-      salary: '$600 в місяць',
-
-      address:
-        'Моя адреса - моя країна, яка зветься Україна!',
-    },
+    header,
 
     main: {
       educations: [
-        'NTU "KPI", Automatics and Instrument making',
-        '2008 Driving license, Category B',
-        '2014 Source-IT courses, “QA and Testing”',
-        '2023 IT Brains courses, "FullStack JS Developer"',
+        {
+          name: 'NTU "KPI", Automatics and Instrument making',
+          isEnd: true,
+        },
+        {
+          name: '2008 Driving license, Category B',
+          isEnd: true,
+        },
+        {
+          name: '2014 Source-IT courses, “QA and Testing”',
+          isEnd: true,
+        },
+        {
+          name: '2023 IT Brains courses, "FullStack JS Developer"',
+          isEnd: false,
+        },
+      ],
+
+      certificates: [
+        {
+          name: 'Диплом',
+          id: 0364,
+        },
+        {
+          name: 'Пластикова картка',
+          id: 0785,
+        },
+        {
+          name: 'Сертифікат',
+          id: 3907,
+        },
       ],
     },
 
-    footer: {
-      social: {
-        email: {
-          text: 'ivan@mail.com',
-          href: 'mailto:ivan@mail.com',
-        },
-        phone: {
-          text: '+380670000123',
-          href: 'tel:+380670000123',
-        },
-        linked: {
-          text: 'LinkedIn',
-          href: 'https://www.linkedin.com/in/dmytro-test',
-        },
-      },
-    },
+    footer,
   })
 })
 
