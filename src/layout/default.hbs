@@ -36,108 +36,15 @@
 	</header>
 	{{/with}}
 
-	<nav>
-		{{> link href='/summary' text='Summary'}}
-		{{> link href='/skills' text='Skills'}}
-		{{> link href='/education' text='Education' end=true}}
-
-		{{!-- <a href='/skills'>Skills</a> --}}
-
-		{{!-- <a href='/summary'>Summary</a> --}}
-	</nav>
-
+	{{> nav}}
 
 	{{! ↓ ця кострукція показує куди шаблонізатору треба вставляти код з container файлу }}
 	{{{body}}}
 
-	{{#with footer}}
-	<footer>
-		<hr>
-		<br>
-		{{!-- Перший варіант: --}}
-		{{!-- <a href="{{social.email.href}}">{{social.email.text}}</a> /
-		<a href="{{social.phone.href}}">{{social.phone.text}}</a> /
-		<a href="{{social.linked.href}}" target="_blank">{{social.linked.text}}</a> --}}
+	<hr>
+	<br>
 
-		{{!-- Другий варіант: --}}
-		{{!-- {{#with social}}
-
-		{{#with email}}
-		<a href="{{href}}">{{text}}</a> /
-		{{/with}}
-
-		{{#with phone}}
-		<a href="{{href}}">{{text}}</a> /
-		{{/with}}
-
-		{{#with linked}}
-		<a href="{{href}}" target="_blank">{{text}}</a>
-		{{/with}}
-		{{/with}} --}}
-
-		{{!-- Третій A варіант: --}}
-		{{!-- {{#with social}}
-
-		{{#with email}}
-		{{> link links=href info=text}} /
-		{{/with}}
-
-		{{#with phone}}
-		{{> link links=href info=text}} /
-		{{/with}}
-
-		{{#with linked}}
-		{{> link links=href info=text}}
-		{{/with}}
-
-		{{/with}} --}}
-
-
-		{{!-- Третій Б варіант: --}}
-		{{!-- {{#with social}}
-
-		==Третій В варіант: {{> link links=email.href info=email.text}} /
-		{{#with email}}
-		{{> link}} /
-		{{/with}}
-
-		{{#with phone}}
-		{{> link}} /
-		{{/with}}
-
-		{{#with linked}}
-		{{> link}}
-		{{/with}}
-
-		{{/with}} --}}
-
-		{{!-- Четвертий варіант: --}}
-		<div>
-
-			{{#with social}}
-			{{> link href=email.href text=email.text line=true}}
-			{{> link href=phone.href text=phone.text line=true}}
-			{{> link href=linked.href text=linked.text blank=true end=true}}
-			{{/with}}
-
-		</div>
-		<br>
-		<div>
-
-			<em>Copyright by {{../header.name.firstname}} {{../header/name/lastname}} &#169;</em>
-
-		</div>
-
-		<br />
-
-		<div>
-
-			<address>{{../header.address}}</address>
-
-		</div>
-
-	</footer>
-	{{/with}}
+	{{>footer}}
 
 
 </body>

@@ -218,5 +218,83 @@ router.get('/education', function (req, res) {
 
 // ================================================================
 
+//              ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/work', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('work', {
+    // ↙ сюди вводимо JSON дані
+    layout: 'big',
+
+    page: {
+      title: 'Resume | Wokr',
+    },
+
+    header,
+
+    main: {
+      works: [
+        {
+          position: 'Junior Fullstack developer',
+          company: {
+            name: 'IT Brains',
+            url: 'https://it-brains.com.ua/',
+          },
+          duration: {
+            from: '10.10.2022',
+            to: '22.03.2023',
+          },
+          projectAmount: 3,
+
+          projects: [
+            {
+              name: 'Resume',
+              url: 'https://creative-sfogliatella-d071d9.netlify.app/',
+              about:
+                'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum!',
+              stacks: [
+                {
+                  name: 'React.js',
+                },
+                {
+                  name: 'HTML / CSS',
+                },
+                {
+                  name: 'Node.js',
+                },
+              ],
+              awards: [
+                {
+                  name: 'Lorem ipsum dolor sit amet, consectetur adipisicing.',
+                },
+                {
+                  name: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit.',
+                },
+              ],
+              stackAmount: 3,
+              awardAmount: 2,
+            },
+          ],
+        },
+        {
+          position: 'Fullstack developer',
+          company: {
+            name: 'Freelance',
+            url: 'https://balkantravel2023.tilda.ws/page34950334.html',
+          },
+          duration: {
+            from: '23.03.2022',
+            to: null,
+          },
+          projectAmount: 2,
+        },
+      ],
+    },
+
+    footer,
+  })
+})
+
+// ================================================================
+
 // Підключаємо роутер до бек-енду
 module.exports = router

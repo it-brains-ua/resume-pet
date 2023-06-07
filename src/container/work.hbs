@@ -1,0 +1,87 @@
+<div>
+
+    <main>
+        {{#with main}}
+        <section>
+            {{> title data='Work history' big=true}}
+            <div>
+                <ul>
+                    {{#each works}}
+                    <li>
+                        <div>{{position}}</div>
+                        <br>
+                        <div>
+                            {{duration.from}}
+                            -
+                            {{#if duration.to}}
+                            {{duration.to}}
+                            {{else}}
+                            (досі працюю)
+                            {{/if}}
+                        </div>
+                        <br>
+                        {{!-- <div><a href="{{company.url}}" target="_blank">{{company.name}}</a></div> --}}
+                        <div>
+                            {{#if company.url}}
+                            {{>link href=company.url blank=true text=company.name end=true}}
+                            {{else}}
+                            <b>{{company.name}}</b>
+                            {{/if}}
+                        </div>
+                        <br>
+                        <br>
+                        <div><strong>Projects: ({{projectAmount}})</strong></div>
+                        <br>
+                        <ul>
+                            {{#each projects}}
+                            <li>
+                                <div>{{>link href=url blank=true text=name end=true}}</div>
+                                <br>
+                                <div>
+                                    <p>
+                                        {{about}}
+                                    </p>
+                                </div>
+                                <br>
+                                <div>
+                                    <em>Project stacks ({{stackAmount}})</em>
+                                </div>
+                                <br>
+                                <div>
+                                    <ul>
+                                        {{#each stacks}}
+                                        <li>
+                                            {{name}}
+                                        </li>
+                                        <br>
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                <br>
+                                <div>
+                                    <em>Project awards ({{awardAmount}})</em>
+                                </div>
+                                <br>
+                                <div>
+                                    <ul>
+                                        {{#each awards}}
+                                        <li>{{name}}</li>
+                                        <br>
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                            </li>
+                            {{/each}}
+                        </ul>
+
+                        <br>
+                    </li>
+                    {{/each}}
+                </ul>
+
+            </div>
+        </section>
+        {{/with}}
+    </main>
+
+</div>
