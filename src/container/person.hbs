@@ -4,15 +4,17 @@
             {{#with person}}
             {{>title data=name big=true}}
             <div>
-                <em>{{gender}}, {{age}}</em>
+                <b>{{gender}}, {{age}}</b>
                 <br>
                 <br>
-                {{#with address}}
-                {{country}} {{state}} {{zip}}
-                <br>
-                <br>
-                {{city}}, {{street}}
-                {{/with}}
+                <address>
+                    {{#with address}}
+                    {{country}} {{state}} {{zip}}
+                    <br>
+                    <br>
+                    {{city}}, {{street}}
+                    {{/with}}
+                </address>
             </div>
             <br>
             <hr>
