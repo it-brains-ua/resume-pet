@@ -402,7 +402,7 @@ router.get('/person', function (req, res) {
 router.get('/bio', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('bio', {
-    layout: bio,
+    layout: 'bio',
 
     name: 'Albert Einstein',
     birthdate: 'March 14, 1879',
