@@ -1,0 +1,72 @@
+<div>
+    <main>
+        <section>
+            <div>
+                <dfn>
+                    {{>title data=name big=true}}
+                </dfn>
+                {{#with history}}
+                    <b><em>{{founder}} ({{year}})</em></b> 
+                {{/with}}
+                <br>
+                {{description}}
+            </div>
+            <hr>
+            <div>
+                {{>title data='Data types:' big=false}}
+                {{#each types}}
+                    <span class="badge text-bg-secondary">{{this}}</span>
+                {{/each}}
+            </div>
+            <br>
+            <div>
+                {{#with syntax}}                
+                    <b>Variables:</b>
+                    {{>js data=variables}}
+                    <br>
+                    <b>Functions:</b>
+                    {{>js data=functions}}
+                    <br>
+                    <b>Conditionals:</b>
+                    {{>js data=conditionals}}
+                    <br>
+                    <b>Loops:</b>
+                    {{>js data=loops}}
+                    <br>
+                    <b>Classes:</b>
+                    {{>js data=classes}}
+                {{/with}}                    
+            </div>
+            <br>
+            <div>
+                {{>title data='Features:'}}
+                {{#each features}}
+                    <button type="button" class="btn btn-outline-success">{{this}}</button>
+                {{/each}}
+            </div>
+            <br>
+            <div>
+                {{>title data='Libraries:'}}
+                {{#each libraries}}
+                    <button type="button" class="btn btn-primary btn-sm">{{this}}</button>
+                {{/each}}
+            </div>
+            <br>
+            <div>
+                {{>title data='Tools:'}}
+                {{#each tools}}
+                    <span class="badge text-bg-warning">{{this}}</span>
+                {{/each}}
+            </div>
+            <br>
+            <div>
+                {{>title data='Community:'}}
+                {{#each community}}
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-dark list-group-item-action">{{name}} - {{type}}</li>
+                </ul>
+                {{/each}}
+            </div>
+        </section>
+    </main>
+</div>
