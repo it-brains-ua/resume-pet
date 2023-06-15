@@ -1,5 +1,5 @@
 {{#with footer}}
-<footer>
+<footer class="px-5 pb-5">
     {{!-- Перший варіант: --}}
     {{!-- <a href="{{social.email.href}}">{{social.email.text}}</a> /
     <a href="{{social.phone.href}}">{{social.phone.text}}</a> /
@@ -58,6 +58,8 @@
     {{/with}} --}}
 
     {{!-- Четвертий варіант: --}}
+    <hr class="my-5">
+    
     <div>
 
         {{#with social}}
@@ -67,14 +69,12 @@
         {{/with}}
 
     </div>
-    <br>
-    <div>
+    
+    <div class="my-3">
 
         <em>Copyright by {{../header.name.firstname}} {{../header/name/lastname}} &#169;</em>
 
     </div>
-
-    <br />
 
     <div>
 
