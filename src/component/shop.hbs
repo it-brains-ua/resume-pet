@@ -1,4 +1,11 @@
-<h2 class="mb-3">{{header}}{{title}}</h2>
+<h2 class="mb-3">
+    {{#if header}}
+    {{header}}
+    {{/if}}
+    {{#if title}}
+    {{title}}
+    {{/if}}
+</h2>
 <p class="p-0 m-0">{{description}}</p>
 {{#each buttons}}
     <a class="btn btn-primary mt-3" href="{{link}}">{{text}}</a>
