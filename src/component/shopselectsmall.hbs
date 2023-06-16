@@ -1,0 +1,8 @@
+<label class="form-label mt-3">{{label}}</label>
+<select class="form-select form-select-sm">
+    <option selected>{{placeholder}}</option>                                            
+    {{#each options}}
+        <option value="{{value}}">{{text}}</option>
+    {{/each}}
+    <div class="form-text">{{caption}}</div>
+</select>
