@@ -1,24 +1,36 @@
-<div>
+<div style="margin: 48px">
     <main>
         <section>
-            {{> title data=name big=true}}
-            <b>{{birthdate}} - {{deathdate}}</b>
-            <br>
-            <br>
-            Nationality: {{nationality}}
-            <br>
-            <br>
-            Occupation: {{occupation}}
-            <br><br>
-            Was born in {{birthplace}}
-            <br><br>
-            And died in {{deathplace}}
-            <br><br>
-            {{>title data='Known for:' big=false}}
-            {{#each known_for}}
-            {{this}}
-            <br><br>
-            {{/each}}
+
+            <div class="row">
+                <dir class="col-8">
+                {{> title data=name big=true}}
+                    <b>{{birthdate}} - {{deathdate}}</b>
+                    <div class="pt-2">
+                        Nationality: {{nationality}}
+                    </div>
+                    <div class="pt-2">
+                        Occupation: {{occupation}}
+                    </div>
+                    <div class="pt-2">
+                        Was born in {{birthplace}}
+                    </div>
+                    <div class="pt-2">
+                        And died in {{deathplace}}
+                    </div>
+                </dir>
+                <dir class="col-4">
+                    {{>title data='Known for:' big=false}}
+                    {{#each known_for}}
+                    {{this}}            
+                    {{/each}}
+                </dir>
+            </div>
+            
+            
+           
+                             
+            
         </section>
         <hr>
         <section>
