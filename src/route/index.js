@@ -44,6 +44,7 @@ router.get('/', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('index', {
+    layout: 'index',
     page: {
       title: 'Welcome to resume lesson',
     },

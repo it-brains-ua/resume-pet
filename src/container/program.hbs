@@ -1,4 +1,4 @@
-<div>
+<div style="margin: 48px">
     <main>
         <section>
             {{>title data='Excursion plan' big=true}}
@@ -13,53 +13,58 @@
                     Date: {{date}}
 
                     <ul>
-                        {{#each program}}
-                            <li>
-                                {{type}}: {{name}} ({{duration}})
-                                <br><br>
-                                {{#with details}}
-                                    {{#with museum}}
-                                        {{>program}}
-                                        <br>
-                                        <ul>
-                                            {{#each exhibits}}
-                                            <li>
-                                                <b>{{name}}</b>  
-                                                {{#if audio_guide}}
-                                                 - &#127911; *
-                                                {{/if}}<br>
-                                                {{description}} <br>
-                                                <i>{{artist}}</i>
-                                            </li>
-                                            <br><br> 
-                                            {{/each}}
-                                        </ul>
-                                        
-                                    {{/with}}
 
-                                    {{#with venue}}
-                                        {{>program}}
-                                    {{/with}}
-                                    <br>
-                                    <ul>
-                                        {{#each performers}}
-                                            <li>
-                                                <b>{{name}}</b><br>
-                                                {{type}} <br>
-                                            </li>
-                                            <br><br>
-                                        {{/each}}
-                                    </ul>                                    
-                                    <br>
-                                    {{#with guide}}
-                                        Your guide is {{name}} spoken {{language}} <br>
-                                        <i>Rating {{rating}}</i>
-                                    {{/with}}
-                                    <br><br><br>                                    
-                                {{/with}}
-                            </li>                             
-                            <br>
-                        {{/each}}
+                        <div class="row">
+                            {{#each program}}
+                                <div class="col-6">
+                                    <li>
+                                        {{type}}: {{name}} ({{duration}})
+                                        <br><br>
+                                        {{#with details}}
+                                            {{#with museum}}
+                                                {{>program}}
+                                                <br>
+                                                <ul>
+                                                    {{#each exhibits}}
+                                                    <li>
+                                                        <b>{{name}}</b>  
+                                                        {{#if audio_guide}}
+                                                        - &#127911; *
+                                                        {{/if}}<br>
+                                                        {{description}} <br>
+                                                        <i>{{artist}}</i>
+                                                    </li>
+                                                    <br><br> 
+                                                    {{/each}}
+                                                </ul>
+                                                
+                                            {{/with}}
+
+                                            {{#with venue}}
+                                                {{>program}}
+                                            {{/with}}
+                                            <br>
+                                            <ul>
+                                                {{#each performers}}
+                                                    <li>
+                                                        <b>{{name}}</b><br>
+                                                        {{type}} <br>
+                                                    </li>
+                                                    <br><br>
+                                                {{/each}}
+                                            </ul>                                    
+                                            <br>
+                                            {{#with guide}}
+                                                Your guide is {{name}} spoken {{language}} <br>
+                                                <i>Rating {{rating}}</i>
+                                            {{/with}}
+                                            <br><br><br>                                    
+                                        {{/with}}
+                                    </li> 
+                                </div>
+                            {{/each}}                            
+                        </div>
+                        
                     </ul>
                 {{/with}}
             {{/with}}
