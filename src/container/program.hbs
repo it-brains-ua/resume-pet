@@ -23,10 +23,10 @@
                                         {{#with details}}
                                             {{#with museum}}
                                                 {{>program}}
-                                                <br>
+                                                
                                                 <ul>
                                                     {{#each exhibits}}
-                                                    <li>
+                                                    <li class="pb-3">
                                                         <b>{{name}}</b>  
                                                         {{#if audio_guide}}
                                                         - &#127911; *
@@ -34,7 +34,7 @@
                                                         {{description}} <br>
                                                         <i>{{artist}}</i>
                                                     </li>
-                                                    <br><br> 
+                                                    
                                                     {{/each}}
                                                 </ul>
                                                 
@@ -43,14 +43,14 @@
                                             {{#with venue}}
                                                 {{>program}}
                                             {{/with}}
-                                            <br>
+                                            
                                             <ul>
                                                 {{#each performers}}
-                                                    <li>
+                                                    <li class="pb-3">
                                                         <b>{{name}}</b><br>
                                                         {{type}} <br>
                                                     </li>
-                                                    <br><br>
+                                                    
                                                 {{/each}}
                                             </ul>                                    
                                             <br>
