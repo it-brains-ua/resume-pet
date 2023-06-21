@@ -1,0 +1,79 @@
+<div style="margin: 48px">
+    <main>
+        <section>
+            {{>title data='Excursion plan' big=true}}
+            <hr>
+            {{#with program}}
+                {{#with excursion}}
+                    <b>{{name}}</b> -
+                    {{#with location}}
+                        {{country}}, {{city}}
+                    {{/with}}
+                    <br><br>
+                    Date: {{date}}
+
+                    <ul>
+
+                        <div class="row">
+                            {{#each program}}
+                                <div class="col-6">
+                                    <li>
+                                        {{type}}: {{name}} ({{duration}})
+                                        <br><br>
+                                        {{#with details}}
+                                            {{#with museum}}
+                                                {{>program}}
+                                                
+                                                <ul>
+                                                    {{#each exhibits}}
+                                                    <li class="pb-3">
+                                                        <b>{{name}}</b>  
+                                                        {{#if audio_guide}}
+                                                        - &#127911; *
+                                                        {{/if}}<br>
+                                                        {{description}} <br>
+                                                        <i>{{artist}}</i>
+                                                    </li>
+                                                    
+                                                    {{/each}}
+                                                </ul>
+                                                
+                                            {{/with}}
+
+                                            {{#with venue}}
+                                                {{>program}}
+                                            {{/with}}
+                                            
+                                            <ul>
+                                                {{#each performers}}
+                                                    <li class="pb-3">
+                                                        <b>{{name}}</b><br>
+                                                        {{type}} <br>
+                                                    </li>
+                                                    
+                                                {{/each}}
+                                            </ul>                                    
+                                            <br>
+                                            {{#with guide}}
+                                                Your guide is {{name}} spoken {{language}} <br>
+                                                <i>Rating {{rating}}</i>
+                                            {{/with}}
+                                            <br><br><br>                                    
+                                        {{/with}}
+                                    </li> 
+                                </div>
+                            {{/each}}                            
+                        </div>
+                        
+                    </ul>
+                {{/with}}
+            {{/with}}
+        </section>
+        <hr>
+        <section>
+            <p>
+                * &#127911; - Audio guide is avaible
+            </p>
+        </section>
+    </main>
+</div>

@@ -1,0 +1,343 @@
+<div style="margin: 48px">
+  <main>
+    <section>
+      <h1>{{make}}
+        {{model}}
+        <span class='badge bg-secondary'>
+          {{year}}
+        </span>
+      </h1>
+      <i>{{color}}</i>
+      <hr>
+    </section>
+    <section>
+        {{>title data='Features' big=true}}
+        {{#with features}}
+        <ul>
+            <div class="row">
+                <div class="col-4">
+                    <li>
+                        {{>title data='Interior:'}}
+                        {{#with interior}}
+                        <ul>
+                            <li>
+                                <b>Seats:</b>
+                                {{#with seats}}
+                                <ul>
+                                    {{>car-i}}
+                                    {{#if heated}}
+                                    <li>                            
+                                        Heated: Yes                            
+                                    </li>
+                                    {{/if}}
+                                    {{#if ventilated}}
+                                    <li>                            
+                                        Ventilated: Yes                            
+                                    </li>
+                                    {{/if}}
+                                </ul>
+                                {{/with}}
+                            </li>
+                            <br>  
+                            <li>
+                                <b>Dashboard:</b>
+                                {{#with dashboard}}
+                                <ul>
+                                    {{>car-i}}
+                                    <li>
+                                        Display:
+                                        {{#with display}}
+                                        
+                                            {{size}}" {{type}} {{resolution}}                                 
+                                            {{#if touchscreen}}
+                                            <br>
+                                            Touchscreen: Yes
+                                            {{/if}}
+                                        
+                                        {{/with}}
+                                    </li>
+                                </ul>
+                                
+                                {{/with}}
+                            </li>   
+                            <br>
+                            <li>
+                                <b>Audio:</b>
+                                {{#with audio}}
+                                <ul>
+                                    <li>
+                                        System: {{system}}
+                                    </li>
+                                    <li>
+                                        Speackers: {{speakers}}
+                                    </li>
+                                    {{#if subwoofer}}
+                                    <li>
+                                        Subwoofer: Yes
+                                    </li>
+                                    {{/if}}
+                                    {{#if bluetooth}}
+                                    <li>
+                                        Bluetooth: Yes
+                                    </li>
+                                    {{/if}}
+                                    {{#if USB}}
+                                    <li>
+                                        USB: Yes
+                                    </li>
+                                    {{/if}}
+                                </ul>
+                                {{/with}}
+
+                            </li>
+                                    
+                        </ul>
+                        {{/with}}
+                    </li>
+                </div>
+                
+                <div class="col-4">
+                    <li>
+                        {{>title data='Exterior:'}}
+                        {{#with exterior}}
+                        <ul>
+                            <li>
+                                <b>Wheels:</b>
+                                {{#with wheels}}
+                                <ul>
+                                    <li>
+                                        Size: {{size}}"
+                                    </li>
+                                    <li>
+                                        Type: {{type}}
+                                    </li>
+                                    <li>
+                                        Color: {{color}}
+                                    </li>
+                                </ul> 
+                                {{/with}}
+                            </li>
+                            <br>
+                            <li>
+                                <b>Headlights:</b>
+                                {{#with headlights}}
+                                <ul>
+                                    <li>
+                                        Type: {{type}}
+                                    </li>
+                                    <li>
+                                        Brightness: {{brightness}}
+                                    </li>
+                                    {{#if automatic}}
+                                    <li>
+                                        Automatic: Yes
+                                    </li>
+                                    {{/if}}
+                                </ul>
+                                {{/with}}
+                            </li>
+                            <br>
+                            <li>
+                                <b>Sunroof:</b>
+                                {{#with sunroof}}
+                                <ul>
+                                    <li>Type: {{type}}</li>
+                                    <li>Size: {{size}}</li>
+                                    {{#if automatic}}
+                                    <li>
+                                        Automatic: Yes
+                                    </li>
+                                    {{/if}}
+                                </ul>
+                                {{/with}}
+                            </li>
+                        </ul>    
+                        {{/with}}
+                    </li>
+                </div>
+
+                <div class="col-4">
+                    <li>
+                        {{>title data='Safety:'}}
+                        {{#with safety}}
+                        <ul>
+                            <li>
+                                <b>Airbags:</b>
+                                {{#with airbags}}                        
+                                <ul>
+                                    <li>
+                                        Front: {{front}}
+                                    </li>
+                                    <li>
+                                        Side: {{side}}
+                                    </li>
+                                    <li>
+                                        Knee: {{knee}}
+                                    </li>
+                                    <li>
+                                        Rear: {{rear}}
+                                    </li>
+                                </ul>
+                                {{/with}}
+                            </li>
+                            <br>
+                            <li>
+                                <b>Assistance:</b>
+                                {{#with assistance}}                        
+                                <ul>
+                                    {{#if blind_spot_monitoring}}
+                                    <li>                                
+                                        Blind spot monitoring: Yes
+                                    </li>
+                                    {{else}}
+                                    <li>
+                                        Blind spot monitoring: No
+                                    </li>
+                                    {{/if}}
+
+                                    {{#if rear_cross_traffic_alert}}
+                                    <li>                                
+                                        Rear cross traffic alert: Yes
+                                    </li>
+                                    {{else}}
+                                    <li>
+                                        Rear cross traffic alert: No
+                                    </li>
+                                    {{/if}}
+
+                                    {{#if lane_departure_warning}}
+                                    <li>                                
+                                        Lane departure warning: Yes
+                                    </li>
+                                    {{else}}
+                                    <li>
+                                        Lane departure warning: No
+                                    </li>
+                                    {{/if}}
+
+                                    {{#if adaptive_cruise_control}}
+                                    <li>                                
+                                        Adaptive cruise control: Yes
+                                    </li>
+                                    {{else}}
+                                    <li>
+                                        Adaptive cruise control: No
+                                    </li>
+                                    {{/if}}
+
+                                    {{#if collision_warning}}
+                                    <li>                                
+                                        Collision warning: Yes
+                                    </li>
+                                    {{else}}
+                                    <li>
+                                        Collision warning: No
+                                    </li>
+                                    {{/if}}
+                                </ul>
+                                    
+                                {{/with}}
+                                
+                            </li>
+                        </ul>
+                        {{/with}}
+                    </li>
+                </div>
+            </div>
+        </ul>
+        {{/with}}
+    </section>
+    <hr>
+    <section>
+
+        <div class="row">
+            <div class="col-6">
+                {{>title data='Engine'}}
+                    {{#with engine}}
+                        <ul>
+                            
+                            <li>
+                                Type: {{type}}
+                            </li>
+                            <li>
+                                Displacement: {{displacement}}
+                            </li>
+                            <li>
+                                Horsepower: {{horsepower}}
+                            </li>
+                            <li>
+                                Torque: {{torque}}
+                            </li>
+                            <li>
+                                Transmission:
+                                {{#with transmission}}
+                                <ul>
+                                    <li>
+                                        Type: {{type}}
+                                    </li>
+                                    <li>
+                                        Gears: {{gears}}
+                                    </li>
+                                </ul>
+                                {{/with}}
+                            </li>
+                            
+                        </ul>
+                    {{/with}}
+            </div>
+            <div class="col-6">
+                {{>title data='Fuel economy'}}
+                {{#with fuel_economy}}
+                    <ul>
+                        <li>
+                            City: {{city}}
+                        </li>
+                        <li>
+                            Highway: {{highway}}
+                        </li>
+                        <li>
+                            Combined: {{combined}}
+                        </li>
+                    </ul>
+                {{/with}}
+            </div>
+        </div>
+
+        
+    
+        
+    </section>
+    <hr>
+    <section>
+        {{>title data='Price'}}
+        {{#with price}}
+        <ul>
+            <li>
+                Destination: {{destination}}
+            </li>
+            <li>
+                <input type="checkbox" checked disabled> Base: ${{base}}
+                {{#with options}}
+                <ul>
+                    Options:
+                    <li>
+                        <input type="checkbox" id='navigation' checked disabled> Navigation: ${{navigation}}
+                    </li>
+                    <li>
+                        <input type="checkbox" id='moonroof' checked disabled> Moonroof: ${{moonroof}}
+                    </li>
+                    <li>
+                        <input type="checkbox" id='premium-paint' checked disabled> Premium paint: ${{premium_paint}}
+                    </li>
+                </ul>
+                {{/with}}
+            </li>
+            <br>
+            <li>
+                <b>Total: ${{total}}</b>
+            </li>
+        </ul>
+        {{/with}}
+    </section>
+  </main>
+</div>

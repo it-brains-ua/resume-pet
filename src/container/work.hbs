@@ -1,0 +1,85 @@
+<div class="px-5">
+
+    <main>
+        {{#with main}}
+        <section>
+            {{> title data='Work history' big=true}}
+            <div>
+                <ul>
+                    {{#each works}}
+                    <li>
+                        <div>{{position}}</div>
+                        
+                        <div>
+                            {{duration.from}}
+                            -
+                            {{#if duration.to}}
+                            {{duration.to}}
+                            {{else}}
+                            (досі працюю)
+                            {{/if}}
+                        </div>
+                        
+                        {{!-- <div><a href="{{company.url}}" target="_blank">{{company.name}}</a></div> --}}
+                        <div class="my-3">
+                            {{#if company.url}}
+                            {{>link href=company.url blank=true text=company.name end=true}}
+                            {{else}}
+                            <b>{{company.name}}</b>
+                            {{/if}}
+                        </div>
+                        
+                        <div class="mb-2"><strong>Projects: ({{projectAmount}})</strong></div>
+                        
+                        <ul>
+                            {{#each projects}}
+                            <li>
+                                <div>{{>link href=url blank=true text=name end=true}}</div>
+                                
+                                <div class="my-3">
+                                    <p>
+                                        {{about}}
+                                    </p>
+                                </div>
+                                
+                                <div>
+                                    <em>Project stacks ({{stackAmount}})</em>
+                                </div>
+                                
+                                <div class="my-3">
+                                    <ul>
+                                        {{#each stacks}}
+                                        <li class="mb-2">
+                                            {{name}}
+                                        </li>
+                                        
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <em>Project awards ({{awardAmount}})</em>
+                                </div>
+                                
+                                <div class="my-3">
+                                    <ul>
+                                        {{#each awards}}
+                                        <li class="mb-2">{{name}}</li>
+                                        
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                            </li>
+                            {{/each}}
+                        </ul>
+                        
+                    </li>
+                    {{/each}}
+                </ul>
+
+            </div>
+        </section>
+        {{/with}}
+    </main>
+
+</div>

@@ -1,0 +1,19 @@
+{{!-- <a href='{{links}}'>{{info}}</a>     3A--}}
+{{!-- <a href='{{href}}'>{{text}}</a> --}}
+{{!-- <a href='{{data.href}}'>{{data.text}}</a>  4A --}}
+
+{{!-- {{#with data}}
+  <a href='{{href}}'>{{text}}</a>
+{{/with}}   5--}}
+
+<a href='{{href}}' {{#if blank}} target='_blank' {{/if}}>{{text}}</a>
+
+
+{{#unless end}}
+	{{#if line}}
+		/
+	{{else}}
+		|
+	{{/if}}
+{{/unless}}
+ 

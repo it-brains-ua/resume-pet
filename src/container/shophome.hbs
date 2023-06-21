@@ -1,0 +1,130 @@
+<main class="p-5">
+    <section>
+        <div class="card">
+            {{#with navigation}}
+            <div class="nav">
+                {{#each links}}
+                    <div class="nav-item">
+                        <a class="nav-link" href="{{htef}}">{{text}}</a>
+                    </div>
+                {{/each}}
+                <div class="pt-2 px-4">Disabled</div>
+            </div>        
+            {{/with}}
+        </div>        
+    </section>
+    
+    <section>
+        {{#with newsBlock}}
+        <h3 class="pt-5 pb-3 text-center">
+            {{title}}
+        </h3>        
+        <div class="row g-2">
+            {{#each cards}}
+                <div class="col-3">
+                    <div class="card text-bg-dark">
+                        <div class="card-header">
+                            {{title}}
+                            {{#if isNew}}
+                            <div class="badge rounded-pill text-bg-success">Нова</div>
+                            {{/if}}
+                            {{#if isTop}}
+                            <div class="badge rounded-pill text-bg-danger">Топ</div>
+                            {{/if}}
+                        </div>
+                        <div class="card-body">
+                            {{description}}
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+        {{/with}}
+    </section>
+
+    <hr class="my-5">
+
+    <section>
+        {{#with goodsBlock}}
+            <div class="nav nav-tabs mb-5">
+                {{#each tabs}}
+                <div class="nav-item">
+                    <a href="#" class="nav-link
+                    {{#if isActive}}
+                        active
+                        {{/if}}
+                        {{#if isDisabled}}
+                            disabled
+                        {{/if}}
+                    ">{{text}}</a> 
+                </div>
+                {{/each}}
+            </div>
+            <div>
+                <div class="row gx-2 gy-4">
+                    {{#each cards}}
+                        <div class="col-4">
+                            <div class="card">
+                                <img src="{{image}}" alt="prouct image">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        {{title}}
+                                        {{#if isHot}}
+                                        <div class="badge rounded-pill text-bg-warning text-uppercase">Hot!</div>
+                                        {{/if}}
+                                        {{#if isNew}}
+                                        <div class="badge rounded-pill text-bg-primary text-capitalize">нове</div>
+                                        {{/if}}
+                                    </div>
+                                    <div>{{description}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        {{/with}}
+    </section>
+
+    <hr class="my-5">
+
+    <section>
+        <div class="card text-bg-dark">
+            <div class="card-body">
+                {{#with subscribe}}                
+                    {{>shop}}
+                {{/with}}
+            </div>            
+        </div>
+    </section>
+
+    <hr class="my-5">
+
+    <section>
+        <div class="card text-bg-success text-center">
+            <div class="card-body">
+                {{#with service}}
+                    {{>shop}}
+                {{/with}}
+            </div>
+        </div>
+        
+    </section>
+
+    <hr class="my-5">
+
+    <footer>
+        
+        <div class="nav flex-column">          
+            <div class="row">
+                {{>shopf data=footer.[0]}}
+                {{>shopf data=footer.[1]}}
+                {{>shopf data=footer.[2]}}
+                {{>shopf data=footer.[3]}}
+                {{>shopf data=footer.[4]}}                
+            </div>
+        </div> 
+        
+    </footer>
+    
+</main>

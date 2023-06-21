@@ -1,0 +1,20 @@
+{{#if groups}}
+                        <b>Groups:</b>                
+                        {{#each groups}}                
+                        <ul>
+                            <br>
+                            <li>ID: {{id}}</li>
+                            <li>Name: {{name}}</li>
+                            <li>Description: {{description}}</li>
+                            <br>
+                            <b>Members:</b>
+                            {{#each members}}
+                            <ul>
+                                {{>facebook}}
+                                <br>
+                            </ul>
+                            {{/each}}
+                        </ul>
+                        {{/each}}
+                        <hr>
+                    {{/if}}

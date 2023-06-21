@@ -1,0 +1,39 @@
+<div style="margin: 48px">
+    <main>
+        <section>
+            {{>title data=name big=true}}
+            {{>title data='Users:'}}
+            {{#each users}}            
+            <ul>
+                {{>facebook}}
+                <br>
+                <b>Friends:</b>
+                {{#each friends}}
+                <ul>
+                    {{>facebook}}
+                    <br>
+                    <b>Mutual friends:</b>
+                    {{#each mutual_friends}}
+                    <ul>
+                        {{>facebook}}
+                        {{#if mutual_friends}}
+                            <br>
+                            <b>Mutual friends</b>
+                            {{#each mutual_friends}}
+                            <ul>
+                                {{>facebook}}
+                            </ul>
+                            {{/each}}
+                        {{/if}}                        
+                    </ul>
+                    <br>
+                    {{/each}}
+                    {{>facebook-g}}
+                </ul>
+                {{/each}}                
+                {{>facebook-g}}
+            </ul>            
+            {{/each}}
+        </section>
+    </main>
+</div>
