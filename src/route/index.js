@@ -35,6 +35,7 @@ router.get('/summary', function (req, res) {
       },
       position: 'Junior Fullstack JS Developer',
       salary: '600$ в місяць',
+      address: 'Ivano-Frankivsk region, Kalush',
     },
 
     main: {
@@ -74,8 +75,6 @@ router.get('/summary', function (req, res) {
 
 // ================================================================
 
-// ================================================================
-
 //              ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/skills', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
@@ -93,6 +92,7 @@ router.get('/skills', function (req, res) {
       },
       position: 'Junior Fullstack JS Developer',
       salary: '600$ в місяць',
+      address: 'Ivano-Frankivsk region, Kalush',
     },
 
     main: {
@@ -144,9 +144,17 @@ router.get('/education', function (req, res) {
       },
       position: 'Junior Fullstack JS Developer',
       salary: '600$ в місяць',
+      address: 'Ivano-Frankivsk region, Kalush',
     },
 
-    main: {},
+    main: {
+      education: [
+        'Школа',
+        'СПТУ',
+        'Університет',
+        'IT-Brais',
+      ],
+    },
 
     footer: {
       social: {
