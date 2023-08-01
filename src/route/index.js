@@ -23,6 +23,31 @@ router.get('/summary', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('summary', {
     // ↙ сюди вводимо JSON дані
+    title: 'Resume',
+
+    name: {
+      firsname: 'Ivan',
+      lastname: 'Ivanov',
+    },
+
+    position: 'Junior Fullstack JS Developer',
+
+    social: {
+      email: {
+        text: 'dmytro@mail.com',
+        href: 'mailto:dmytro@mail.com',
+      },
+      phone: {
+        text: '+380670000123',
+        href: 'tel:+380670000123',
+      },
+      linkedin: {
+        text: 'LinkedIn',
+        href: 'https://www.linkedin.com/in/dmytro-test',
+      },
+    },
+
+    salary: '600$ в місяць',
   })
 })
 
