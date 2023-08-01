@@ -125,5 +125,46 @@ router.get('/skills', function (req, res) {
   })
 })
 
+// ================================================================
+
+//              ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/education', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('education', {
+    // ↙ сюди вводимо JSON дані
+
+    page: {
+      title: 'Resume',
+    },
+
+    header: {
+      name: {
+        firstname: 'Ivan',
+        lastname: 'Ivanov',
+      },
+      position: 'Junior Fullstack JS Developer',
+      salary: '600$ в місяць',
+    },
+
+    main: {},
+
+    footer: {
+      social: {
+        email: {
+          text: 'dmytro@mail.com',
+          href: 'mailto:dmytro@mail.com',
+        },
+        phone: {
+          text: '+380670000123',
+          href: 'tel:+380670000123',
+        },
+        linkedin: {
+          text: 'LinkedIn',
+          href: 'https://www.linkedin.com/in/dmytro-test',
+        },
+      },
+    },
+  })
+})
 // Підключаємо роутер до бек-енду
 module.exports = router
