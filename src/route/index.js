@@ -145,10 +145,22 @@ router.get('/education', function (req, res) {
 
     main: {
       education: [
-        'Школа',
-        'СПТУ',
-        'Університет',
-        'IT-Brais',
+        {
+          name: 'Школа',
+          isEnd: false,
+        },
+        {
+          name: 'СПТУ',
+          isEnd: true,
+        },
+        {
+          name: 'Університет',
+          isEnd: true,
+        },
+        {
+          name: 'IT-Brais',
+          isEnd: false,
+        },
       ],
     },
 

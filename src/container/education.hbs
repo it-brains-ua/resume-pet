@@ -6,7 +6,8 @@
                 <ul>
                     {{#each education}}
                     <li>
-                        {{this}}
+                        {{name}}
+                        {{#unless isEnd}} (ще в процесі) {{/unless}}
                     </li>
                     {{/each}}
 
