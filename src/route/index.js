@@ -5,7 +5,32 @@ const router = express.Router()
 
 // ================================================================
 
-var address = 'Ivano-Frankivsk region, Kalush'
+var header = {
+  name: {
+    firstname: 'Ivan',
+    lastname: 'Ivanov',
+  },
+  position: 'Junior Fullstack JS Developer',
+  salary: '600$ в місяць',
+  address: 'Ivano-Frankivsk region, Kalush',
+}
+
+var footer = {
+  social: {
+    email: {
+      text: 'dmytro@mail.com',
+      href: 'mailto:dmytro@mail.com',
+    },
+    phone: {
+      text: '+380670000123',
+      href: 'tel:+380670000123',
+    },
+    linkedin: {
+      text: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/dmytro-test',
+    },
+  },
+}
 
 // ================================================================
 
@@ -29,18 +54,10 @@ router.get('/summary', function (req, res) {
     // ↙ сюди вводимо JSON дані
 
     page: {
-      title: 'Resume',
+      title: 'Resume | Summary',
     },
 
-    header: {
-      name: {
-        firstname: 'Ivan',
-        lastname: 'Ivanov',
-      },
-      position: 'Junior Fullstack JS Developer',
-      salary: '600$ в місяць',
-      address,
-    },
+    header,
 
     main: {
       summary: {
@@ -58,22 +75,7 @@ router.get('/summary', function (req, res) {
       },
     },
 
-    footer: {
-      social: {
-        email: {
-          text: 'dmytro@mail.com',
-          href: 'mailto:dmytro@mail.com',
-        },
-        phone: {
-          text: '+380670000123',
-          href: 'tel:+380670000123',
-        },
-        linkedin: {
-          text: 'LinkedIn',
-          href: 'https://www.linkedin.com/in/dmytro-test',
-        },
-      },
-    },
+    footer,
   })
 })
 
@@ -86,46 +88,44 @@ router.get('/skills', function (req, res) {
     // ↙ сюди вводимо JSON дані
 
     page: {
-      title: 'Resume',
+      title: 'Resume | Skills',
     },
 
-    header: {
-      name: {
-        firstname: 'Ivan',
-        lastname: 'Ivanov',
-      },
-      position: 'Junior Fullstack JS Developer',
-      salary: '600$ в місяць',
-      address,
-    },
+    header,
 
     main: {
       skills: [
-        'HTML',
-        'Handlebars',
-        'VS Code',
-        'Git',
-        'Terminal',
-        'NPM',
+        {
+          name: 'HTML',
+          point: 10,
+          isTop: true,
+        },
+        {
+          name: 'Handlebars',
+          point: 8,
+          isTop: true,
+        },
+        {
+          name: 'VS Code & NPM',
+          point: 9,
+          isTop: false,
+        },
+        {
+          name: 'Git & Terminal',
+          point: 7,
+        },
+        {
+          name: 'React.js',
+          point: 0,
+        },
+        {
+          name: 'PHP',
+          point: null,
+        },
       ],
     },
 
-    footer: {
-      social: {
-        email: {
-          text: 'dmytro@mail.com',
-          href: 'mailto:dmytro@mail.com',
-        },
-        phone: {
-          text: '+380670000123',
-          href: 'tel:+380670000123',
-        },
-        linkedin: {
-          text: 'LinkedIn',
-          href: 'https://www.linkedin.com/in/dmytro-test',
-        },
-      },
-    },
+    footer,
   })
 })
 
@@ -138,18 +138,10 @@ router.get('/education', function (req, res) {
     // ↙ сюди вводимо JSON дані
 
     page: {
-      title: 'Resume',
+      title: 'Resume | Education',
     },
 
-    header: {
-      name: {
-        firstname: 'Ivan',
-        lastname: 'Ivanov',
-      },
-      position: 'Junior Fullstack JS Developer',
-      salary: '600$ в місяць',
-      address,
-    },
+    header,
 
     main: {
       education: [
@@ -160,22 +152,7 @@ router.get('/education', function (req, res) {
       ],
     },
 
-    footer: {
-      social: {
-        email: {
-          text: 'dmytro@mail.com',
-          href: 'mailto:dmytro@mail.com',
-        },
-        phone: {
-          text: '+380670000123',
-          href: 'tel:+380670000123',
-        },
-        linkedin: {
-          text: 'LinkedIn',
-          href: 'https://www.linkedin.com/in/dmytro-test',
-        },
-      },
-    },
+    footer,
   })
 })
 // Підключаємо роутер до бек-енду
