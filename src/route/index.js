@@ -95,33 +95,17 @@ router.get('/skills', function (req, res) {
 
     main: {
       skills: [
-        {
-          name: 'HTML',
-          point: 10,
-          isTop: true,
-        },
-        {
-          name: 'Handlebars',
-          point: 8,
-          isTop: true,
-        },
-        {
-          name: 'VS Code & NPM',
-          point: 9,
-          isTop: false,
-        },
-        {
-          name: 'Git & Terminal',
-          point: 7,
-        },
-        {
-          name: 'React.js',
-          point: 0,
-        },
-        {
-          name: 'PHP',
-          point: null,
-        },
+        { name: 'HTML', point: 10, isTop: true },
+        { name: 'Handlebars', point: 8, isTop: true },
+        { name: 'VS Code & NPM', point: 9, isTop: false },
+        { name: 'Git & Terminal', point: 7 },
+        { name: 'React.js', point: 0 },
+        { name: 'PHP', point: null },
+      ],
+      hobbies: [
+        { name: 'Хоббі 1', isMain: true },
+        { name: 'Хоббі 2', isMain: false },
+        { name: 'Хоббі 3', isMain: true },
       ],
     },
 
@@ -160,6 +144,20 @@ router.get('/education', function (req, res) {
         {
           name: 'IT-Brais',
           isEnd: false,
+        },
+      ],
+      certificates: [
+        {
+          name: 'Сертифікат 1',
+          id: 3,
+        },
+        {
+          name: 'Сертифікат 2',
+          id: 2,
+        },
+        {
+          name: 'Сертифікат 3',
+          id: 1,
         },
       ],
     },
