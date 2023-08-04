@@ -5,6 +5,8 @@ const router = express.Router()
 
 // ================================================================
 
+var address = 'Ivano-Frankivsk region, Kalush'
+
 // ================================================================
 
 // router.get Створює нам один ентпоїнт
@@ -37,7 +39,7 @@ router.get('/summary', function (req, res) {
       },
       position: 'Junior Fullstack JS Developer',
       salary: '600$ в місяць',
-      address: 'Ivano-Frankivsk region, Kalush',
+      address,
     },
 
     main: {
@@ -94,7 +96,7 @@ router.get('/skills', function (req, res) {
       },
       position: 'Junior Fullstack JS Developer',
       salary: '600$ в місяць',
-      address: 'Ivano-Frankivsk region, Kalush',
+      address,
     },
 
     main: {
@@ -146,7 +148,7 @@ router.get('/education', function (req, res) {
       },
       position: 'Junior Fullstack JS Developer',
       salary: '600$ в місяць',
-      address: 'Ivano-Frankivsk region, Kalush',
+      address,
     },
 
     main: {
