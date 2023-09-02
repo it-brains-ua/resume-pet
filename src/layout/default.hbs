@@ -1,21 +1,75 @@
-{{!-- 
-  Це леяут по замовчюванню, котрий вже містить базову структуру HTML документа
-  І котрий обгортає код container файлів для будь-яких ендпоїнтів
+{{!--
+Це леяут по замовчюванню, котрий вже містить базову структуру HTML документа
+І котрий обгортає код container файлів для будь-яких ендпоїнтів
 --}}
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <title>
-      Page name
-    </title>
-    <meta charset='utf-8' />
-    <link href='css/index.css' rel='stylesheet' />
-  </head>
+<head>
+	<title>
+		{{page.title}}
+	</title>
+	<meta charset='utf-8' />
+	<link href='css/index.css' rel='stylesheet' />
+</head>
 
-  <body>
-    {{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   --}}
-    {{{body}}}
-  </body>
+<body>
+	{{#with header}}
+	<header>
+		<div>
+			<h1>{{name.firstname}} {{name.lastname}}</h1>
+		</div>
+		<div>
+			<b>{{position}}</b>
+		</div>
+		<br>
+		<div>
+			<em>{{salary}}</em>
+		</div>
+		<br>
+		<div>
+			<address>{{address}}</address>
+		</div>
+		<br>
+		<hr>
+	</header>
+	{{/with}}
+
+	<nav>
+		{{> link href="/" text='Home page' line=true }}
+		{{> link href="/summary" text='Summary' line=true }}
+		{{> link href="/skills" text='Skills' line=true }}
+		{{> link href="/education" text='Education' line=true }}
+	</nav>
+
+	{{! ↓ ця кострукція показує куди шаблонізатору треба вставляти код з container файлу --}}
+	{{{body}}}
+
+	{{#with footer}}
+	<footer>
+		<hr>
+		<br>
+		<div>
+			{{#with social}}
+
+			{{> link href=email.href text=email.text external=true }}
+			{{> link href=phone.href text=phone.text external=true }}
+			{{> link href=linkedin.href text=linkedin.text external=true }}
+
+			{{/with}}
+		</div>
+		<br>
+		<div>
+			{{#with ../header.name}}
+			<em>© Copyright by {{firstname }} {{lastname}}</em>
+			{{/with}}
+		</div>
+		<br>
+		<div>
+			<address>{{../header.address}}</address>
+		</div>
+	</footer>
+	{{/with}}
+</body>
 
 </html>

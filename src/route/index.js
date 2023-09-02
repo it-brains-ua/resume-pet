@@ -5,6 +5,35 @@ const router = express.Router()
 
 // ================================================================
 
+var header = {
+  name: {
+    firstname: 'Yevhen',
+    lastname: 'Topchan',
+  },
+  position: 'Junior Fullstack JS Developer',
+  salary: '750$',
+  address: 'Bila Tserkva, Ukraine',
+}
+
+var footer = {
+  social: {
+    email: {
+      text: 'emt16191@gmail.com',
+      href: 'mailto:emt16191@gmail.com',
+    },
+    phone: {
+      text: '+380938282657',
+      href: 'tel:+380938282657',
+    },
+    linkedin: {
+      text: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/dmytro-test',
+    },
+  },
+}
+
+// ================================================================
+
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
@@ -23,6 +52,138 @@ router.get('/summary', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('summary', {
     // ↙ сюди вводимо JSON дані
+    page: {
+      title: 'Resume | Summary',
+    },
+    header,
+    main: {
+      summary: {
+        title: 'Summary',
+        text: `Open-minded for new technologies, with 1 years of experience in development. Whenever I start to
+              work on a new project I learn the domain and try to understand the idea of the project. Good team
+              player, every colleague is a friend to me.`,
+      },
+      experience: {
+        title: 'Other experience',
+        text: `Pet project for parsing sport betting data from different platforms ( odds ) and sport statistics (
+              tournament position, goals etc), analyzing by simple mathematics models and preparing probability
+              for such events like: money line - first win / draw / second win, totals etc.`,
+      },
+    },
+    footer,
+  })
+})
+
+// ================================================================
+
+router.get('/skills', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('skills', {
+    // ↙ сюди вводимо JSON дані
+    page: {
+      title: 'Resume | Skills',
+    },
+    header,
+    main: {
+      skills: [
+        {
+          name: 'HTML',
+          point: 10,
+          isTop: true,
+        },
+        {
+          name: 'Handlebars',
+          point: 6,
+          isTop: false,
+        },
+        {
+          name: 'VS Code',
+          point: 8,
+          isTop: true,
+        },
+        {
+          name: 'Git',
+          point: 7,
+          isTop: false,
+        },
+        {
+          name: 'Terminal',
+          point: 9,
+          isTop: true,
+        },
+        {
+          name: 'NPM',
+          point: 5,
+        },
+        {
+          name: 'React.js',
+          point: 0,
+        },
+        {
+          name: 'PHP',
+          point: null,
+        },
+      ],
+      hobbies: [
+        {
+          name: 'Listen to music',
+          isMain: true,
+        },
+        {
+          name: 'Read books',
+          isMain: false,
+        },
+        {
+          name: 'Fishing',
+          isMain: true,
+        },
+        {
+          name: 'Play video games',
+          isMain: true,
+        },
+      ],
+    },
+    footer,
+  })
+})
+
+// ================================================================
+
+router.get('/education', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('education', {
+    // ↙ сюди вводимо JSON дані
+    page: {
+      title: 'Resume | Education',
+    },
+    header,
+    main: {
+      educations: [
+        {
+          name: 'School #16',
+          isEnd: true,
+        },
+        {
+          name: 'Pharm College',
+          isEnd: true,
+        },
+        {
+          name: 'Pharm Academy',
+          isEnd: true,
+        },
+        {
+          name: 'IT-Brains',
+          isEnd: false,
+        },
+      ],
+
+      certificates: [
+        { name: 'Сертификат Пекаря', id: 4729 },
+        { name: 'Сертификат Аптекаря', id: 6473793 },
+        { name: 'Ещё сертификат', id: 160485 },
+      ],
+    },
+    footer,
   })
 })
 
