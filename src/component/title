@@ -1,0 +1,9 @@
+<div>
+  <h2>{{data}}</h2>
+  <h2>{{big}}
+    {{#if big istrue}} {{/if}}
+  </h2>
+  <h3> {{big}}
+    {{#if big isfalse}} {{/if}}
+  </h3>
+</div>
