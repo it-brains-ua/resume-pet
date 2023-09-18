@@ -12,7 +12,7 @@ var header = {
   },
   position: 'Junior Fullstack JS Developer',
   salary: '600$ в місяць',
-  address: Ukraine, KamenetsPodilskij
+  address: 'Ukraine, KamenetsPodilskij',
 };
 
 var footer = {
@@ -98,12 +98,11 @@ router.get('/skills', function (req, res) {
           isMain: true,
         },
         {
-          name: "teaching"
-        isMain: false,
+          name: "teaching",
+          isMain: false,
         },
       ],
-    },
-     {
+
       skills: [
         {
           name: 'HTML',
@@ -176,8 +175,7 @@ router.get('/education', function (req, res) {
           id: 10102356,
         },
       ],
-    },
-     {
+
       educations: [
         {
           name: 'Подільський спеціальний навчально-реабілітаційний соціально-економічний коледж',
@@ -205,6 +203,72 @@ router.get('/education', function (req, res) {
   })
 })
 // ================================================================
+router.get('/work', function (req, res) {
+  // res.render генерує нам HTML сторінку
+  res.render('work', {
+    //            ↙ cюди вводимо назву файлу з сontainer
 
+    layout: 'big',
+
+    page: {
+      title: 'Resume | Work',
+    },
+    header,
+
+    main: {
+      works: [
+        {
+          position: "Junior Fullstack Developer",
+          company: {
+            name: "IT Brains",
+            url: "https://web.skillzrun.com/learn/130344",
+          },
+          duration: {
+            from: "10.10.2022",
+            to: null,
+          },
+          projectAmount: '3',
+
+          projects:
+            [
+              {
+                name: "Resume",
+                url: "https://web.skillzrun.com/learn/130344",
+                about: "VS code, JS",
+                stacks: {
+                  stackAmount: '3',
+                  [
+                    {
+                      name: "React JS",
+                    },
+                    {
+                      name: "HTML / CSS",
+                    },
+                    {
+                      name: "Node js",
+                    },
+              ],
+                  awards:
+                  {
+                    stackAmount: '2',
+                    [
+                      {
+                        name: 'Certificate QA',
+                      },
+                      {
+                        name: 'The automated process of getting data for sites from data base',
+                      },
+                ],
+                  },
+                },
+              },
+            ],
+        },
+      ],
+    },
+
+    footer,
+  })
+})
 // Підключаємо роутер до бек-енду
 module.exports = router
