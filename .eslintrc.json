@@ -8,32 +8,32 @@
 
                 {{#with data}}
                 <div>
-                   <p>{{data: make={'Toyota'} }}</p>
-                   <h1>{{model:"Camry"}}</h1>
-                   <h2>{{data: year "2022"}}</h2>
-                   <h3>{{color: silver}}</h3>
+                    <p>make:{{make}}</p>
+                   <h1>model:{{model}}</h1>
+                   <h2>year:{{year}}</h2>
+                   <h3>color:{{color}}</h3>
                 </div>
                 {{/with}} 
                     <br>
 
                 {{#each data}}
                    <div>
-                     <span>{{material: 'leather'}}</span>
-                     <samp>{{color: 'black'}}</samp>
-                     <b>{{heted: true}}</b>
-                     <p>{{ventilated: true}}</p>
+                     <span>material:{{material}}</span>
+                     <samp>color:{{color}}</samp>
+                     <b>heated:{{heated}}</b>
+                     <p>ventilated:{{ventilated}}</p>
                    </div>
                 {{/each}}
                     <br>
 
                  {{#each types}}
                  <div>
-                    <h4>{{material: 'plastic'}}</h4>
-                    <h5>{{color: 'black'}}</h5>
-                    <h6>{{type: 'LCD'}}</h6>
-                    <var>{{size: 10.1}}</var>
-                    <abbr>{{resolution: '1280x720'}}</abbr>
-                    <ul>{{touchscreen: true}}</ul>
+                    <h4>material:{{material}}</h4>
+                    <h5>color:{{color}}</h5>
+                    <h6>type:{{type}}</h6>
+                    <var>size:{{size}}</var>
+                    <abbr>resolution:{{resolution}}</abbr>
+                    <ul>touchscreen:{{touchscreen}}</ul>
                  </div>
                  {{/each}}
                     <br>
