@@ -1,19 +1,44 @@
-{
-    "env": {
-        "browser": true,
-        "commonjs": true,
-        "es2021": false
-    },
-    "extends": ["eslint-config-prettier", "eslint:recommended", "plugin:prettier/recommended"],
+<!DOCTYPE html>
+<html>
+    <head>
+        <div>
+            {{#with car}}
+              <div>
+                <h1>{{name}}</h1>
 
-    "plugins": ["prettier", "prettier-plugin-hbs"],
-    "rules": {
-        "prettier/prettier": ["error", {}, { "usePrettierrc": true }]
-    },
-    "overrides": [
-    ],
-    "parserOptions": {
-        "ecmaVersion": 7,
-        "sourceType": "module"
-    }   
-}
+                {{#with data}}
+                <div>
+                    <p>make:{{make}}</p>
+                   <h1>model:{{model}}</h1>
+                   <h2>year:{{year}}</h2>
+                   <h3>color:{{color}}</h3>
+                </div>
+                {{/with}} 
+                    <br>
+
+                {{#each data}}
+                   <div>
+                     <span>material:{{material}}</span>
+                     <samp>color:{{color}}</samp>
+                     <b>heated:{{heated}}</b>
+                     <p>ventilated:{{ventilated}}</p>
+                   </div>
+                {{/each}}
+                    <br>
+
+                 {{#each types}}
+                 <div>
+                    <h4>material:{{material}}</h4>
+                    <h5>color:{{color}}</h5>
+                    <h6>type:{{type}}</h6>
+                    <var>size:{{size}}</var>
+                    <abbr>resolution:{{resolution}}</abbr>
+                    <ul>touchscreen:{{touchscreen}}</ul>
+                 </div>
+                 {{/each}}
+                    <br>
+              </div>
+            {{/with}}
+        </div>
+    </head>
+</html>
